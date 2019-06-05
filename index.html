@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <!--Двери-->
+    <div class="container doors">
+      <div class="col-12" style="height: 100px;"></div>
+      <div class="row mx-auto">
+        <img src="door.png" style="height: 500px; width: 300px; " class="mr-5" id="door">
+        <img src="door2.png" style="height: 500px; width: 300px;" class="mr-5">
+        <img src="door3.png" style="height: 500px; width: 300px;">
+      </div>
+    </div>
+  <!--Локация-->
+    <div class="col-12 hogwarts" style="background-image: url(bg.jpg); height: 800px; background-size: 100% 100%; display: none;">
+      <h1 class="text-white">Помоги Гарри найти его метлу, плащ и палочку! Надо заработать 3 очка!</h1>
+      <h1 class="text-whit point ">0</h1>
+      <button class="btn btn-success nazad">Выйди из игры</button>
+      <div class="col-12 ">
+        <img class="item1" src="gun.png" style="height: 30px; width: 40px; margin-right: 100px; margin-top: 450px;position: absolute;" id="item1">
+        <img class="item2 point" src="mantiya.png" style="height: 30px; width: 40px; margin-right: 100px; margin-top: 100px;position: absolute;" id="item2">
+        <img class="item3 point" src="metla.png" style="height: 30px; width: 40px; margin-right: 300px; margin-top: 600px;position: absolute;" id="item3">
+        <img class="item4 point" src="palochka.png" style="height: 30px; width: 40px; margin-right: 300px; margin-top: 50px;position: absolute;" id="item4">
+        <img class="item5" src="ring.png" style="height: 30px; width: 40px; margin-right: 300px; margin-top: 450px;position: absolute;" id="item5">
+      </div>
+    </div>
+
+
+
+   <script type="text/javascript"> 
+  let  point = 0;
+
+
+
+
+  //спрятанные двери и появление локации
+      document.querySelector(".doors").onclick = function(){
+        alert("Добро пожаловать в Hogwarts")
+    document.querySelector(".doors").style.display="none"
+    document.querySelector(".hogwarts").style.display="block"
+  };
+     
+         document.querySelector(".hogwarts").onclick = function(){};
+
+        document.querySelector(".item3").onclick = function(){
+             document.querySelector(".item3").style.display="none"
+             point=point+1
+              document.querySelector(".point").innerHTML = point;
+        };
+        document.querySelector(".item2").onclick = function(){
+             document.querySelector(".item2").style.display="none";
+             point=point+1
+              document.querySelector(".point").innerHTML = point;
+        };
+                document.querySelector(".item4").onclick = function(){
+             document.querySelector(".item4").style.display="none";
+             point=point+1 
+              document.querySelector(".point").innerHTML = point;
+        };
+                        document.querySelector(".item1").onclick = function(){
+             document.querySelector(".hogwarts").style.display="none"
+              document.querySelector(".doors").style.display="block"
+        };
+                                document.querySelector(".item5").onclick = function(){
+             document.querySelector(".hogwarts").style.display="none"
+              document.querySelector(".doors").style.display="block"
+        };
+                                        document.querySelector(".nazad").onclick = function(){
+             document.querySelector(".hogwarts").style.display="none"
+              document.querySelector(".doors").style.display="block"
+        };
+   
+
+   </script>
+  </body>
+</html>
